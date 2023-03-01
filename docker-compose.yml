@@ -1,19 +1,8 @@
 version: '3'
 services:
-  react-app:
+  web:
     build: 
       context: ./
-      dockerfile: dockerfile.dev
+      dockerfile: dockerfile.prod
     ports:
-      - "8080:3000"
-    volumes:
-      - /usr/app/node_modules
-      - ./:/usr/app
-  react-app-tests:
-    build: 
-      context: ./
-      dockerfile: dockerfile.dev
-    volumes:
-      - /usr/app/node_modules
-      - ./:/usr/app
-    command: ["npm", "run", "test"]
+      - "80:80"

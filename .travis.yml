@@ -1,0 +1,7 @@
+sudo: required
+services: 
+  - docker
+before_install: 
+  - docker build -t decipher7154/react-app-dev-docker-course -f dockerfile.dev\
+script:
+  - docker run -e CI=true decipher7154/react-app-dev-docker-course npm run test
